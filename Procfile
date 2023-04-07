@@ -1,1 +1,1 @@
-web: gunicorn react-notes-web.wsgi
+web: gunicorn mynotes.wsgi
