@@ -52,14 +52,14 @@ const NotePage = ({ match, history }) => {
         history.push('/')
     }
 
-    let handleSubmit = () => {
+    let handleSubmit = async () => {
         console.log('NOTE:', note)
-        if (noteId !== 'new' && note.body == '') {
-            deleteNote()
+        if (noteId !== 'new' && note.body === '') {
+            deleteNote().then(() => {console.log('deleteNote')})
         } else if (noteId !== 'new') {
-            updateNote()
+            await updateNote().then(() => {console.log('updateNote')})
         } else if (noteId === 'new' && note.body !== null) {
-            createNote()
+            await createNote().then(() => {console.log('createNote')})
         }
         history.push('/')
     }
