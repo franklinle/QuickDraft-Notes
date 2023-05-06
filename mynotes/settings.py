@@ -28,8 +28,7 @@ SECRET_KEY = 'django-insecure-iciqweur=hp(xnyau)ev9d0@t)4orp)js8=t8qayvib05if0+3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['react-django-notes-app.herokuapp.com']
 
 # Application definition
 
@@ -132,8 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES = (os.path.join(BASE_DIR, 'static'),)
-django_heroku.settings(locals())
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'frontend/build/static'
